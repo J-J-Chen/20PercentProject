@@ -1,5 +1,5 @@
 # Proposal: [Triva fun]
-## [subtitle that helps describe the project]
+## [The new trivia crack]
 [John Chen] 
 
 ## Needs and Opportunities

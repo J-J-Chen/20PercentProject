@@ -1,4 +1,4 @@
-# Proposal: [Triva fun]
+# Proposal: [Triva fun!]
 ## [The new trivia crack]
 [John Chen] 
 

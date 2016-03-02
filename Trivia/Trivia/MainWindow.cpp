@@ -2,12 +2,12 @@
 
 MainWindow::MainWindow() {
 	window = nullptr;
-	SCREEN_HEIGHT = 200;
-	SCREEN_WIDTH = 200;
+	SCREEN_HEIGHT = 1080;
+	SCREEN_WIDTH = 1928;
 }
 
-MainWindow::~MainWindow()
-{
+MainWindow::~MainWindow() {
+
 }
 
 void MainWindow::run() {

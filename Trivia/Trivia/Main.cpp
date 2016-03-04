@@ -1,12 +1,9 @@
-#include "MainWindow.h"
 #include <iostream>
+#include "MainGame.h"
 
 int main(int argc, char** argv) {
-	MainWindow mainWindow;
-	mainWindow.run();
+    MainGame mainGame;
+    mainGame.run();
 
-	std::cout << "Enter any key to quit...";
-	int a; 
-	std::cin >> a;
-	return 0;
+    return 0;
 }

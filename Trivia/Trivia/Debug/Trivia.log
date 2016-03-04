@@ -1,3 +1,7 @@
-﻿  MainWindow.cpp
+﻿  MainGame.cpp
+  GLSLProgram.cpp
+  Generating Code...
+  Skipping... (no relevant changes detected)
+  Main.cpp
   Trivia.vcxproj -> C:\Users\John C\APCS\20PercentProject\Trivia\Debug\Trivia.exe
   Trivia.vcxproj -> C:\Users\John C\APCS\20PercentProject\Trivia\Debug\Trivia.pdb (Partial PDB)

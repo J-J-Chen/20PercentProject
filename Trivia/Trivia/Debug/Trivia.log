@@ -1,7 +1,7 @@
-﻿  MainGame.cpp
-  GLSLProgram.cpp
-  Generating Code...
-  Skipping... (no relevant changes detected)
+﻿  Sprite.cpp
+c:\users\john c\apcs\20percentproject\trivia\trivia\sprite.cpp(2): fatal error C1083: Cannot open include file: 'Vertex.h': No such file or directory
+  MainGame.cpp
   Main.cpp
-  Trivia.vcxproj -> C:\Users\John C\APCS\20PercentProject\Trivia\Debug\Trivia.exe
-  Trivia.vcxproj -> C:\Users\John C\APCS\20PercentProject\Trivia\Debug\Trivia.pdb (Partial PDB)
+  GLSLProgram.cpp
+  Errors.cpp
+  Generating Code...

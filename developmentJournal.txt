@@ -11,6 +11,12 @@ February 19, 2016
 Today I installed SDL into eclipse. I have started to watch videos and look though the SDL documentation. SDL isn't too hard to use, and it's mostly intuitive. It still follows the syntax of c++, but has more funcionality. and can actually do graphical stuff. At first, I had problems including the library, but I was able to fix it. Eclipse was saying that there was nothing to build, even though I had a .cpp. Turns out mingw isn't the best compiler, but is commonly used with SDL. Once I switched my compiler and set it up with cygwin, it worked perfectly. I have also started to draw out my whole program on paper. I have drawn out all the buttons, spinners, and pictures. Tomorrow I will start to find all the pictures and create my main class. I will continue to watch more tutorials to learn the basics of SDL and C++. 
 
 
-February 16, 2016
+February 26, 2016
 
 Today I worked on adding basic pictures to my trivia game. I have just started to make the basic layout of the main menu. Right now, I'm considering how I should store the game data. I want to have some type of virtual currency, and I have to look into the different ways to do that. I'm actually sort of familiar with YAML, but xml would be better since it is harder to cheat. But, I don't know how to use xml, so I'll have to see. Next week I'm planning to add my questions for the trivia part of the game, so I'll need to start looking up how to use a file reader in C++. I am having troubles with adding/commiting my files. Whenever I try to track my Microsoft Visual Sudio files, git says that it cannot read the files it doesn't have permission. I have tried changing the project folder from read only to allow writing, but it always changes back.
+
+March 4, 2016
+
+Today I wrote a very basic shader. I have created a vertex shader and a fragment shader. I have linked them inside my code, but it doesn't work. I don't know if it's my graphics that's not making it work, or if I'm not linking it correctly. Whenever I run the program inside Visual Studio, the blue screen I made shows up, but not the red square I drew. However, whenever I run the .exe that Visual Studio generates, no color shows up and my error handling gives me that the shader file could not be opened. 
+
+In addition of creating a shader, I have also created a little practice sprite. Writing sprites are a little bit annoying, because you have to draw everything using triangles. I drew a square, and it required me to draw 6 verticies, which means I have to have an array of 12 point (I need both x and y values for one verticie). 

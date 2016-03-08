@@ -1,20 +1,23 @@
 #pragma once
-#include <GL\glew.h>
+#include <GL/glew.h>
 
-class Sprite{
+//A 2D quad that can be rendered to the screen
+class Sprite
+{
 public:
-	Sprite();
-	~Sprite();
+    Sprite();
+    ~Sprite();
 
-	void init(float x, float y, float width, float height);
-	void draw();
+    void init(float x, float y, float width, float height);
 
+    void draw();
+    
 private:
-	float _x;
-	float _y;
-	float _width;
-	float _height;
+    float _x;
+    float _y;
+    float _width;
+    float _height;
+    GLuint _vboID;
 
-	GLuint _vboID;
 };
 

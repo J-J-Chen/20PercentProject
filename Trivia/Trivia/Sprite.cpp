@@ -1,62 +1,113 @@
 #include "Sprite.h"
+#include "Vertex.h"
 
-Sprite::Sprite() {
-	_vboID = 0;
+#include <cstddef>
+
+Sprite::Sprite()
+{
+    //Always initialize your buffer IDs to 0
+    _vboID = 0;
 }
 
-Sprite::~Sprite() {
-	if (_vboID != 0) {
-		glDeleteBuffers(1, &_vboID);
-	}
+
+Sprite::~Sprite()
+{
+    //Always remember to delete your buffers when
+    //you are done!
+    if (_vboID != 0) {
+        glDeleteBuffers(1, &_vboID);
+    }
 }
 
+//Initializes the sprite VBO. x, y, width, and height are
+//in the normalized device coordinate space. so, [-1, 1]
 void Sprite::init(float x, float y, float width, float height) {
-	_x = x;
-	_y = y;
-	_width = width;
-	_height = height;
+    //Set up our private vars
+    _x = x;
+    _y = y;
+    _width = width;
+    _height = height;
 
-	if (_vboID == 0) {
-		glGenBuffers(1, &_vboID);
-	}
+    //Generate the buffer if it hasn't already been generated
+    if (_vboID == 0) {
+        glGenBuffers(1, &_vboID);
+    }
 
-	float vertexData[12];
-	vertexData[0] = x + width;
-	vertexData[1] = y + height;
+    //This array will hold our vertex data.
+    //We need 6 vertices, and each vertex has 2
+    //floats for X and Y
+    Vertex vertexData[6];
 
-	vertexData[2] = x;
-	vertexData[3] = y + height;
+    //First Triangle
+    vertexData[0].position.x = x + width;
+    vertexData[0].position.y = y + height;
 
-	vertexData[4] = x;
-	vertexData[5] = y;
+    vertexData[1].position.x = x;
+    vertexData[1].position.y = y + height;
 
-	vertexData[6] = x;
-	vertexData[7] = y;
+    vertexData[2].position.x = x;
+    vertexData[2].position.y = y;
 
-	vertexData[8] = x + width;
-	vertexData[9] = y + height;
+    //Second Triangle
+    vertexData[3].position.x = x;
+    vertexData[3].position.y = y;
 
-	vertexData[10] = x + width;
-	vertexData[11] = y;
+    vertexData[4].position.x = x + width;
+    vertexData[4].position.y = y;
 
-	glBindBuffer(GL_ARRAY_BUFFER, _vboID);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(vertexData), vertexData, GL_STATIC_DRAW);
+    vertexData[5].position.x = x + width;
+    vertexData[5].position.y = y + height;
 
-	glBindBuffer(GL_ARRAY_BUFFER, 0);
+    //Set all vertex colors to magenta
+    for (int i = 0; i < 6; i++) {
+        vertexData[i].color.r = 255;
+        vertexData[i].color.g = 0;
+        vertexData[i].color.b = 255;
+        vertexData[i].color.a = 255;
+    }
+
+    //
+    vertexData[1].color.r = 0;
+    vertexData[1].color.g = 0;
+    vertexData[1].color.b = 255;
+    vertexData[1].color.a = 255;
+
+    vertexData[4].color.r = 0;
+    vertexData[4].color.g = 255;
+    vertexData[4].color.b = 0;
+    vertexData[4].color.a = 255;
+
+    //Tell opengl to bind our vertex buffer object
+    glBindBuffer(GL_ARRAY_BUFFER, _vboID);
+    //Upload the data to the GPU
+    glBufferData(GL_ARRAY_BUFFER, sizeof(vertexData), vertexData, GL_STATIC_DRAW);
+
+    //Unbind the buffer (optional)
+    glBindBuffer(GL_ARRAY_BUFFER, 0);
 }
 
+//Draws the sprite to the screen
 void Sprite::draw() {
-	glBindBuffer(GL_ARRAY_BUFFER, _vboID);
 
-	glEnableVertexAttribArray(0);
+    //bind the buffer object
+    glBindBuffer(GL_ARRAY_BUFFER, _vboID);
 
-	glVertexAttribPointer(0, 2, GL_FLOAT, false, 0, 0);
+    //Tell opengl that we want to use the first
+    //attribute array. We only need one array right
+    //now since we are only using position.
+    glEnableVertexAttribArray(0);
 
-	glDrawArrays(GL_TRIANGLES, 0, 6);
+    //This is the position attribute pointer
+    glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)offsetof(Vertex, position));
+    //This is the color attribute pointer
+    glVertexAttribPointer(1, 4, GL_UNSIGNED_BYTE, GL_TRUE, sizeof(Vertex), (void*)offsetof(Vertex, color));
 
-	glDisableVertexAttribArray(0);
+    //Draw the 6 vertices to the screen
+    glDrawArrays(GL_TRIANGLES, 0, 6);
 
+    //Disable the vertex attrib array. This is not optional.
+    glDisableVertexAttribArray(0);
 
-	glBindBuffer(GL_ARRAY_BUFFER, 0);
-
+    //Unbind the VBO
+    glBindBuffer(GL_ARRAY_BUFFER, 0);
 }

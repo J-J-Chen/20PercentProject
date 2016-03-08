@@ -1,29 +1,34 @@
 #pragma once
-#include <string>
-#include <GL\glew.h>
 
+#include <string>
+#include <GL/glew.h>
+
+
+//This class handles the compilation, linking, and usage of a GLSL shader program.
+//Reference: http://www.opengl.org/wiki/Shader_Compilation
 class GLSLProgram
 {
 public:
-	GLSLProgram();
-	~GLSLProgram();
+    GLSLProgram();
+    ~GLSLProgram();
 
-	void compileShaders(const std::string& vertexShaderFilePath, const std::string& fragmentShaderFilePath);
+    void compileShaders(const std::string& vertexShaderFilePath, const std::string& fragmentShaderFilepath);
 
-	void linkShaders();
+    void linkShaders();
 
-	void addAttribute(std::string attributeName);
+    void addAttribute(const std::string& attributeName);
 
-	void use();
-	void unUse();
-
+    void use();
+    void unuse();
 private:
-	void compileShader(const std::string& filePath, GLuint id);
 
-	int _numAttributes;
+    int _numAttributes;
 
-	GLuint _programId;
-	GLuint _vertexShaderID;
-	GLuint _fragmentShaderID;
+    void compileShader(const std::string& filePath, GLuint id);
+
+    GLuint _programID;
+
+    GLuint _vertexShaderID;
+    GLuint _fragmentShaderID;
 };
 

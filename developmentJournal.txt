@@ -20,3 +20,9 @@ March 4, 2016
 Today I wrote a very basic shader. I have created a vertex shader and a fragment shader. I have linked them inside my code, but it doesn't work. I don't know if it's my graphics that's not making it work, or if I'm not linking it correctly. Whenever I run the program inside Visual Studio, the blue screen I made shows up, but not the red square I drew. However, whenever I run the .exe that Visual Studio generates, no color shows up and my error handling gives me that the shader file could not be opened. 
 
 In addition of creating a shader, I have also created a little practice sprite. Writing sprites are a little bit annoying, because you have to draw everything using triangles. I drew a square, and it required me to draw 6 verticies, which means I have to have an array of 12 point (I need both x and y values for one verticie). 
+
+March 11, 2016
+
+Today I started to learn about buttons. Making them look nice is tricky, but adding them isn't too bad. The main problem is sizing the buttons. Each moniter is a different size, so you can't just make a button a constant a mount of pixels. So instead, you have to use screen coordinates, which have values from -2 to 0. However there is still a problem. Having a rectangluar window will look different if the user decides to resize his window into a rectangluar window. The buttons will allways change size and look weird. I think I know how to figure it out, but I haven't implemented it yet.
+
+Another problem is making the buttons look nice. Right now, they look booring. There are ways to make them look better, but I need to first focus on adding everything else. I will soon start to add a file reader to read out the questions for my trivia game.

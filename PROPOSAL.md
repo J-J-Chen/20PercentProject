@@ -20,7 +20,7 @@ The game will be capable of saving your progress and will have a multiplayer fun
 | Date          | Deliverable   |
 | ------------- | ------------- |
 | February 26   | I will have my window finished |
-| April 1       | Create a skeleton of the project |
+| April 1       | Have a main menu created |
 | April 29      | Have single player working |
 
 ## Reality Check

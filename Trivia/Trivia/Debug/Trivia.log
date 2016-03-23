@@ -1,5 +1,12 @@
-﻿  IOManager.cpp
+﻿  Sprite.cpp
+  MainGame.cpp
+c:\users\john c\apcs\20percentproject\trivia\trivia\maingame.cpp(80): warning C4305: '+=': truncation from 'double' to 'float'
+  Main.cpp
+  IOManager.cpp
 c:\users\john c\apcs\20percentproject\trivia\trivia\iomanager.cpp(14): warning C4244: 'initializing': conversion from 'std::streamoff' to 'int', possible loss of data
 c:\users\john c\apcs\20percentproject\trivia\trivia\iomanager.cpp(16): warning C4244: '-=': conversion from 'std::streamoff' to 'int', possible loss of data
+  GLSLProgram.cpp
+  Errors.cpp
+  Generating Code...
   Trivia.vcxproj -> C:\Users\John C\APCS\20PercentProject\Trivia\Debug\Trivia.exe
   Trivia.vcxproj -> C:\Users\John C\APCS\20PercentProject\Trivia\Debug\Trivia.pdb (Partial PDB)

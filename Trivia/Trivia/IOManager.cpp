@@ -18,6 +18,17 @@ bool IOManager::readFileToBuffer(std::string filePath, std::vector<char>& buffer
 	buffer.resize(fileSize);
 	file.read(&(buffer[0]), fileSize);
 	file.close();
-	
+
 	return true;
+}
+
+void IOManager::processInput(SDL_Event evnt) {
+	switch (evnt.type) {
+	case SDL_TEXTINPUT:
+		strcat(text, evnt.text.text);
+		break;
+	}
+}
+
+void IOManager::InterpretText(char* text) {
 }

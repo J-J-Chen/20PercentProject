@@ -38,3 +38,7 @@ Today I fixed a bug with my shaders. I accidently mixed up some of my inputs. I 
 April 8, 2016
 
 Today I start to work on my input manager class. It is sort of confusing how it grabs input. I can say that if event x happens, do something. However, I'm not sure how to check to see if they clicked on a button or just a random place. One way that I think would work is to use the pixel that they clicked and see if that pixel belongs to a button. However, there probably is an easier way to do this. I'm also haing touble with my class. I'm using a built in method to get the event, and it takes an SDL_Event pointer. So, I pass in an SDL_Event pointer and it complains that I'm passing in an unitialized variable. So, I'm not sure what to do. If I pass the adress (&) of just an SDL_Event and not the pointer, then it works. However, I need the pointer so I can use that event in other classes.
+
+April 15, 2016
+
+Today I started working on creating a button. Right now, I just have a plain color background, which should be changing real soon. I added an OI class, which handles all my mouse and keyboard events. This willl be most helpful when I create my actual game. I put my OI handler in my game loop. I'm not sure that this is very efficent, but I don't know how else to do it. I just have a switch statement that checks to see what is happening. Nothing else really happened this week. I did start my power point, though. I didn't have much time this week to work on my 20 percent project.

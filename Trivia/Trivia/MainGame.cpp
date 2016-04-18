@@ -1,5 +1,7 @@
 #include "MainGame.h"
 #include "Errors.h"
+#include "IOManager.h"
+#include <SDL/SDL_keyboard.h>
 
 #include <iostream>
 #include <string>
@@ -77,7 +79,7 @@ void MainGame::gameLoop() {
     //Will loop until we set _gameState to EXIT
     while (_gameState != GameState::EXIT) {
         processInput();
-        _time += 0.01;
+        _time += 0.01f;
         drawGame();
     }
 }
@@ -86,15 +88,16 @@ void MainGame::gameLoop() {
 void MainGame::processInput() {
     SDL_Event evnt;
 
+	SDL_StartTextInput();
+
     //Will keep looping until there are no more events to process
     while (SDL_PollEvent(&evnt)) {
         switch (evnt.type) {
             case SDL_QUIT:
                 _gameState = GameState::EXIT;
                 break;
-            case SDL_MOUSEMOTION:
-                std::cout << evnt.motion.x << " " << evnt.motion.y << std::endl;
-                break;
+			default:
+				IOManager::processInput(evnt);
         }
     }
 }

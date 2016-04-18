@@ -1,4 +1,0 @@
-﻿  Main.cpp
-c:\users\john c\apcs\20percentproject\trivia nt\trivia\main.cpp(20): error C2352: 'Input::isRunning': illegal call of non-static member function
-  c:\users\john c\apcs\20percentproject\trivia nt\trivia\input.h(10): note: see declaration of 'Input::isRunning'
-c:\users\john c\apcs\20percentproject\trivia nt\trivia\main.cpp(23): error C3867: 'Input::isRunning': non-standard syntax; use '&' to create a pointer to member

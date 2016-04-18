@@ -53,5 +53,8 @@
     <ClInclude Include="IOManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Audio.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -42,3 +42,7 @@ Today I start to work on my input manager class. It is sort of confusing how it 
 April 15, 2016
 
 Today I started working on creating a button. Right now, I just have a plain color background, which should be changing real soon. I added an OI class, which handles all my mouse and keyboard events. This willl be most helpful when I create my actual game. I put my OI handler in my game loop. I'm not sure that this is very efficent, but I don't know how else to do it. I just have a switch statement that checks to see what is happening. Nothing else really happened this week. I did start my power point, though. I didn't have much time this week to work on my 20 percent project.
+
+April 22, 2016
+
+Today there was a fire drill, so I wan't able to do much with my 20 percent projet today. I did, however, create a button manager, which will determine if a button has been clicked or is enabled. I do have one error that I'm not sure about, though.

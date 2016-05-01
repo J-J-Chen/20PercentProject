@@ -21,7 +21,7 @@ The game will be capable of saving your progress and will have a multiplayer fun
 | ------------- | ------------- |
 | February 26   | I will have my window finished |
 | April 1       | I will have some basic shaders working |
-| April 29      | Have single player working |
+| April 29      | Have layout and questions class |
 
 ## Reality Check
 I'm going to need a computer and internet.

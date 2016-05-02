@@ -46,3 +46,7 @@ Today I started working on creating a button. Right now, I just have a plain col
 April 22, 2016
 
 Today there was a fire drill, so I wan't able to do much with my 20 percent projet today. I did, however, create a button manager, which will determine if a button has been clicked or is enabled. I do have one error that I'm not sure about, though.
+
+Aprill 29, 2106
+
+Just like last week, I didn't really have the opportunity to do much with my 20 percent project. I mostly ended up studying for the AP test. I did, however, start to my my draw class that would decide which buttons and which text should be drawn onto the screen. It's a little tricky, since I have a decent amount of classes that each only contain part of the necessary information to draw the game.

@@ -4,3 +4,7 @@
 ButtonAction::ButtonAction() {
 
 }
+
+void ButtonAction::DisableButtons() {
+
+}

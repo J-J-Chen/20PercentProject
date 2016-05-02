@@ -2,6 +2,10 @@
 
 #include <cmath>
 
+Button::Button() {
+
+}
+
 Button::Button(int xCenter, int yCenter, int fullHeight, int fullWidth) {
 	centerX = xCenter;
 	centerY = yCenter;

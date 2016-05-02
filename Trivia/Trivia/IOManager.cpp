@@ -35,8 +35,6 @@ void IOManager::processInput(SDL_Event evnt) {
 		//}
 		break;
 	}
-	case SDL_TEXTEDITING:
-		break;
 	default:
 		break;
 	}

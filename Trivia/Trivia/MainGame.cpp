@@ -1,7 +1,7 @@
 #include "MainGame.h"
 #include "Errors.h"
 #include "IOManager.h"
-#include <SDL/SDL_keyboard.h>
+#include "Draw.h"
 
 #include <iostream>
 #include <string>
@@ -35,7 +35,6 @@ void MainGame::run() {
 
 //Initialize SDL and Opengl and whatever else we need
 void MainGame::initSystems() {
-	//Initialize SDL
 	SDL_Init(SDL_INIT_EVERYTHING);
 
 	//Open an SDL window

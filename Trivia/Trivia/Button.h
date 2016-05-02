@@ -2,6 +2,7 @@
 
 class Button {
 public:
+	Button();
 	Button(int centerX, int centerY, int height, int width);
 	Button(int centerX, int centerY, int radius);
 	bool HasBeenClicked(int x, int y);

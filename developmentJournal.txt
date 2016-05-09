@@ -53,4 +53,4 @@ Just like last week, I didn't really have the opportunity to do much with my 20 
 
 May 6, 2016
 
-
+Today I was able to finish my layout. The color choices aren't the best, and eventually I might want to let the user choose them colors. However, that's not really important right now. I basically gave up on my isEnabled for my buttons. I think that I'm just going to have the same buttons always showing, no matter what. I started to figure out how to put text on the screen. It's actually harder than it seems. I have to install SDL_ttf, and link that to SDL. Whenever I try to initalize it, it gives me an error, so I'm not sure what to do. I finished my question class. Right now, I have hard coded the questions in. Latter on, I might want to use YAML or read the questions from a text file.

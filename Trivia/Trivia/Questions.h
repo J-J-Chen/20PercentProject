@@ -1,5 +1,4 @@
 #pragma once
-#include <fstream>
 #include <iostream>
 #include <string>
 
@@ -109,7 +108,7 @@ public:
 		return correctAnswer;
 	}
 
-private:
+	//private:
 	static std::string question;
 	static std::string answer1;
 	static std::string answer2;
@@ -117,3 +116,10 @@ private:
 	static std::string answer4;
 	static int correctAnswer;
 };
+
+std::string Questions::question = "There must have been an error!";
+std::string Questions::answer1 = "Most likely everything got overwritten.";
+std::string Questions::answer2 = "asdf";
+std::string Questions::answer3 = "asdf";
+std::string Questions::answer4 = "asdf";
+int Questions::correctAnswer = 1;

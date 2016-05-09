@@ -15,8 +15,8 @@ MainGame::MainGame() :
 	window(nullptr),
 	_gameState(GameState::PLAY)
 {
-	fontA = TTF_OpenFont("asdf.ttf", 24);
-	fontB = TTF_OpenFont("asf.ttf", 30);
+	//fontA = TTF_OpenFont("asdf.ttf", 24);
+	//fontB = TTF_OpenFont("asf.ttf", 30);
 }
 
 MainGame::~MainGame()
@@ -35,9 +35,9 @@ void MainGame::initSystems() {
 		fatalError("SDL Window could not be created!");
 	}
 
-	if (TTF_Init() == -1) {
+	/*if (TTF_Init() == -1) {
 		fatalError("TTF_Init failed!");
-	}
+	}*/
 
 	SDL_GLContext glContext = SDL_GL_CreateContext(window);
 	if (glContext == nullptr) {

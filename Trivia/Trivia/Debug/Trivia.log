@@ -1,9 +1,3 @@
-﻿MainGame.obj : error LNK2019: unresolved external symbol _TTF_Init referenced in function "private: void __thiscall MainGame::initSystems(void)" (?initSystems@MainGame@@AAEXXZ)
-MainGame.obj : error LNK2019: unresolved external symbol _TTF_OpenFont referenced in function "public: __thiscall MainGame::MainGame(void)" (??0MainGame@@QAE@XZ)
-MainGame.obj : error LNK2001: unresolved external symbol "private: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > Questions::question" (?question@Questions@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@A)
-MainGame.obj : error LNK2001: unresolved external symbol "private: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > Questions::answer1" (?answer1@Questions@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@A)
-MainGame.obj : error LNK2001: unresolved external symbol "private: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > Questions::answer2" (?answer2@Questions@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@A)
-MainGame.obj : error LNK2001: unresolved external symbol "private: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > Questions::answer3" (?answer3@Questions@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@A)
-MainGame.obj : error LNK2001: unresolved external symbol "private: static class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > Questions::answer4" (?answer4@Questions@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@A)
-MainGame.obj : error LNK2001: unresolved external symbol "private: static int Questions::correctAnswer" (?correctAnswer@Questions@@0HA)
-C:\Users\John C\APCS\20PercentProject\Trivia\Debug\Trivia.exe : fatal error LNK1120: 8 unresolved externals
+﻿  MainGame.cpp
+  Trivia.vcxproj -> C:\Users\John C\APCS\20PercentProject\Trivia\Debug\Trivia.exe
+  Trivia.vcxproj -> C:\Users\John C\APCS\20PercentProject\Trivia\Debug\Trivia.pdb (Partial PDB)

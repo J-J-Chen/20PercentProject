@@ -1,12 +1,6 @@
 #include "Draw.h"
 
 Draw::Draw() {
-	window = SDL_CreateWindow("Trivia Fun!",
-		SDL_WINDOWPOS_UNDEFINED,
-		SDL_WINDOWPOS_UNDEFINED,
-		1024, 768,
-		SDL_WINDOW_RESIZABLE);
-
 	r.w = 100;
 	r.h = 50;
 

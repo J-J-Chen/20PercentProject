@@ -2,66 +2,55 @@
 #include "Errors.h"
 #include "IOManager.h"
 #include "Draw.h"
+#include "ButtonManager.h"
+#include "Questions.h"
 
 #include <iostream>
 #include <string>
 
-//Constructor, just initializes private member variables
 MainGame::MainGame() :
 	_screenWidth(1024),
 	_screenHeight(768),
 	_time(0.0f),
-	_window(nullptr),
+	window(nullptr),
 	_gameState(GameState::PLAY)
 {
-
+	fontA = TTF_OpenFont("asdf.ttf", 24);
+	fontB = TTF_OpenFont("asf.ttf", 30);
 }
 
-//Destructor
 MainGame::~MainGame()
-{
-}
+{}
 
-//This runs the game
 void MainGame::run() {
 	initSystems();
-
-	//Initialize our sprite. (temporary)
 	_sprite.init(-1.0f, -1.0f, 2.0f, 2.0f);
-
-	//This only returns when the game ends
 	gameLoop();
 }
 
-//Initialize SDL and Opengl and whatever else we need
 void MainGame::initSystems() {
 	SDL_Init(SDL_INIT_EVERYTHING);
-
-	//Open an SDL window
-	_window = SDL_CreateWindow("Game Engine", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, _screenWidth, _screenHeight, SDL_WINDOW_OPENGL);
-	if (_window == nullptr) {
+	window = SDL_CreateWindow("Trivia Fun!", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, _screenWidth, _screenHeight, SDL_WINDOW_OPENGL);
+	if (window == nullptr) {
 		fatalError("SDL Window could not be created!");
 	}
 
-	//Set up our OpenGL context
-	SDL_GLContext glContext = SDL_GL_CreateContext(_window);
+	if (TTF_Init() == -1) {
+		fatalError("TTF_Init failed!");
+	}
+
+	SDL_GLContext glContext = SDL_GL_CreateContext(window);
 	if (glContext == nullptr) {
 		fatalError("SDL_GL context could not be created!");
 	}
 
-	//Set up glew (optional but recommended)
 	GLenum error = glewInit();
 	if (error != GLEW_OK) {
 		fatalError("Could not initialize glew!");
 	}
 
-	//Tell SDL that we want a double buffered window so we dont get
-	//any flickering
 	SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
-
-	//Set the background color to blue
 	glClearColor(0.0f, 0.0f, 1.0f, 1.0f);
-
 	initShaders();
 }
 
@@ -72,24 +61,19 @@ void MainGame::initShaders() {
 	_colorProgram.linkShaders();
 }
 
-//This is the main game loop for our program
 void MainGame::gameLoop() {
-
-	//Will loop until we set _gameState to EXIT
 	while (_gameState != GameState::EXIT) {
 		processInput();
 		_time += 0.01f;
-		drawGame();
+		draw();
 	}
 }
 
-//Processes input with SDL
 void MainGame::processInput() {
 	SDL_Event evnt;
 
 	SDL_StartTextInput();
 
-	//Will keep looping until there are no more events to process
 	while (SDL_PollEvent(&evnt)) {
 		switch (evnt.type) {
 		case SDL_QUIT:
@@ -101,24 +85,64 @@ void MainGame::processInput() {
 	}
 }
 
-//Draws the game using the almighty OpenGL
 void MainGame::drawGame() {
-
-	//Set the base depth to 1.0
 	glClearDepth(1.0);
-	//Clear the color and depth buffer
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
 	_colorProgram.use();
-
 	GLuint timeLocation = _colorProgram.getUniformLocation("time");
 	glUniform1f(timeLocation, _time);
-
-	//Draw our sprite!
 	_sprite.draw();
-
 	_colorProgram.unuse();
+	SDL_GL_SwapWindow(window);
+}
 
-	//Swap our buffer and draw everything to the screen!
-	SDL_GL_SwapWindow(_window);
+void MainGame::draw() {
+	answer1.w = 400;
+	answer1.h = 100;
+	answer2.w = 400;
+	answer2.h = 100;
+	answer3.w = 400;
+	answer3.h = 100;
+	answer4.w = 400;
+	answer4.h = 100;
+	question.w = 849;
+	question.h = 300;
+
+	renderer = SDL_CreateRenderer(window, -1, 0);
+
+	texture = SDL_CreateTexture(renderer, SDL_PIXELFORMAT_RGBA8888, SDL_TEXTUREACCESS_TARGET, 1024, 768);
+
+	answer1.x = 75;
+	answer1.y = 468;
+	answer2.x = 525;
+	answer2.y = 468;
+	answer3.x = 525;
+	answer3.y = 618;
+	answer4.x = 75;
+	answer4.y = 618;
+	question.x = 75;
+	question.y = 50;
+
+	SDL_SetRenderTarget(renderer, texture);
+	SDL_SetRenderDrawColor(renderer, 118, 32, 201, 1);
+	SDL_RenderClear(renderer);
+	SDL_RenderDrawRect(renderer, &answer1);
+	SDL_SetRenderDrawColor(renderer, 0, 255, 17, 0x00);
+	SDL_RenderFillRect(renderer, &answer1);
+	SDL_RenderFillRect(renderer, &answer2);
+	SDL_RenderFillRect(renderer, &answer3);
+	SDL_RenderFillRect(renderer, &answer4);
+	SDL_RenderFillRect(renderer, &question);
+	SDL_SetRenderTarget(renderer, NULL);
+	SDL_RenderCopy(renderer, texture, NULL, NULL);
+	SDL_RenderPresent(renderer);
+}
+
+void MainGame::getQandA() {
+	_question = Questions::GetQuestions();
+	_answer1 = Questions::getAnswer1();
+	_answer2 = Questions::getAnswer2();
+	_answer3 = Questions::getAnswer3();
+	_answer4 = Questions::getAnswer4();
+	_correctAnswer = Questions::getCorrectAnswer();
 }

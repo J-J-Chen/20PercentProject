@@ -47,10 +47,14 @@ April 22, 2016
 
 Today there was a fire drill, so I wan't able to do much with my 20 percent projet today. I did, however, create a button manager, which will determine if a button has been clicked or is enabled. I do have one error that I'm not sure about, though.
 
-Aprill 29, 2106
+April 29, 2016
 
 Just like last week, I didn't really have the opportunity to do much with my 20 percent project. I mostly ended up studying for the AP test. I did, however, start to my my draw class that would decide which buttons and which text should be drawn onto the screen. It's a little tricky, since I have a decent amount of classes that each only contain part of the necessary information to draw the game.
 
 May 6, 2016
 
 Today I was able to finish my layout. The color choices aren't the best, and eventually I might want to let the user choose them colors. However, that's not really important right now. I basically gave up on my isEnabled for my buttons. I think that I'm just going to have the same buttons always showing, no matter what. I started to figure out how to put text on the screen. It's actually harder than it seems. I have to install SDL_ttf, and link that to SDL. Whenever I try to initalize it, it gives me an error, so I'm not sure what to do. I finished my question class. Right now, I have hard coded the questions in. Latter on, I might want to use YAML or read the questions from a text file.
+
+May 13, 2016
+
+Today I started to implement TTF into my game. SDL does not natively support putting text on the screen, so I have to add on another library, called SDL_TTF. THis made everything complicated and broke everything. I'm following a tutorial on Lazy Foo, but it is really confusing and poorly explained. I've spent all my time on that, but it still won't work.

@@ -58,3 +58,7 @@ Today I was able to finish my layout. The color choices aren't the best, and eve
 May 13, 2016
 
 Today I started to implement TTF into my game. SDL does not natively support putting text on the screen, so I have to add on another library, called SDL_TTF. THis made everything complicated and broke everything. I'm following a tutorial on Lazy Foo, but it is really confusing and poorly explained. I've spent all my time on that, but it still won't work.
+
+May 20, 2016
+
+Today we just listened to people presenting their 20 percent project. I didn't have time to do anything else.
